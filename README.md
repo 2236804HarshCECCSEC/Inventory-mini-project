@@ -1,202 +1,206 @@
-📦 Inventory Management System (Python - OOP Based)
-📌 Project Overview
+📘 INVENTORY MANAGEMENT SYSTEM
 
-This project is a console-based inventory management system built using Python.
-It helps store and manage product details like name, price, and quantity.
+Introduction
 
-The system has two types of users:
+In small businesses, shops, and warehouses, managing inventory manually can lead to many problems such as data loss, incorrect stock records, and no proper monitoring of staff activities. Without a structured system, it becomes difficult to track products, update stock, or monitor changes made by employees.
 
-👨‍💼 Admin (Full control)
+To solve this problem, we have developed a Role-Based Inventory Management System using Python. This system allows different users (Admin and Staff) to access features based on their roles. It ensures that data is saved permanently and that staff activities are properly recorded.
 
-👨‍🔧 Staff (Limited control)
+This project demonstrates the use of Object-Oriented Programming (OOP) concepts along with file handling and error management in Python.
 
-It works in the terminal/command prompt.
+Problem Statement
 
-🚀 Features (Explained in Simple Words)
-🔐 Role-Based Access
+Many small businesses face the following issues:
 
-The system asks who you are (Admin or Staff).
+• Stock records are maintained manually.
+• Product data may be lost when the system closes.
+• Staff members can update stock without monitoring.
+• No system to prevent duplicate product IDs.
+• Errors occur when wrong inputs are given.
 
-Based on your role, it shows different options.
+The goal of this project is to build a structured system that:
 
-This keeps the system secure and organized.
+• Stores product information properly
+• Saves data permanently
+• Allows different access levels for Admin and Staff
+• Tracks staff activities
+• Prevents common input errors
 
-👨‍💼 Admin Capabilities (Full Control)
-➕ Add New Product
+Objective of the Project
 
-Admin can enter:
+The main objectives of this project are:
 
-Product name
+1. To implement a structured inventory system using OOP principles.
+2. To implement role-based authentication.
+3. To save product data using file handling.
+4. To log staff activities for monitoring.
+5. To handle user input errors safely.
+6. To create a beginner-friendly but professional system.
 
-Price
+Technologies and Concepts Used
 
-Quantity
-This adds a new item to inventory.
+This project uses the following technologies and programming concepts:
 
-✏️ Update Product Details
+• Python Programming Language
+• Object-Oriented Programming (OOP)
+• Abstraction
+• Inheritance
+• Encapsulation
+• File Handling (JSON & TXT files)
+• Exception Handling (try-except)
+• Role-Based Authentication
 
-Admin can change:
+Explanation of OOP Concepts Used
 
-Product price
 
-Product quantity
-Useful when price changes or new stock arrives.
+Abstraction
+Abstraction means hiding internal implementation details and showing only necessary features.
+In this project, we created an abstract class called:
+InventorySystem
+This class defines required methods like:
+• view_products()
+• update_stock()
+Any class that inherits from this abstract class must implement these methods. This ensures a proper structure and consistency in the system.
+Abstraction helps in designing clean and professional software.
 
-❌ Delete Product
-
-Admin can remove a product completely from the inventory.
-
-📋 View All Products
-
-Admin can see the complete list of all products with their details.
-
-📦 Manage Stock
-
-Admin can increase stock when new items arrive.
-
-👨‍🔧 Staff Capabilities (Limited Control)
-👀 View Products
-
-Staff can see available products and their stock.
-
-🛒 Sell Product
-
-When a product is sold:
-
-Staff selects the product
-
-Quantity is reduced automatically
-
-🔄 Auto Stock Update
-
-After selling, the system updates the remaining quantity.
-
-🛠️ Technologies Used (Simple Explanation)
-
-Python 3 → Main programming language
-
-OOP (Object-Oriented Programming) → Used classes to organize code
-
-Loops → To repeat menu options
-
-Conditional Statements (if-else) → To check roles and conditions
-
-Exception Handling → To avoid crashes when user enters wrong input
-
-🧠 OOP Concepts Used (Simple Meaning)
-📦 Class
-
-Blueprint to create objects (like Product class).
-
-🏷️ Object
-
-Real item created from class (like a specific product).
-
-🔧 Constructor (__init__)
-
-Runs automatically when object is created.
-
-🔒 Encapsulation
-
-Keeping data and functions together inside a class.
-
-⚠️ Exception Handling
-
-Using try-except to handle errors safely.
-
-⚙️ System Workflow (Step-by-Step Explanation)
-1️⃣ Program Starts
-
-The system begins running in terminal.
-
-2️⃣ Role Selection
-
-User selects:
-
-1 for Admin
-
-2 for Staff
-
-3️⃣ Login (If implemented)
-
-User enters credentials.
-
-4️⃣ Menu Display
-
-Based on role:
-
-Admin menu shows full options
-
-Staff menu shows limited options
-
-5️⃣ User Chooses Operation
-
-User selects what they want to do:
-
-Add product
-
-Sell product
-
-Update stock
-
-View products
-
-6️⃣ System Processes Request
-
-The program:
-
-Updates data
-
-Shows confirmation message
-
-7️⃣ Loop Continues
-
-Menu appears again until user chooses Exit.
-
-8️⃣ Exit
-
-Program stops.
-
-📂 Project Structure
-Inventory Management System
-│
-├── inventory.ipynb   # Main project file
-└── README.md         # Project documentation
-
-▶️ How to Run
-Method 1: Jupyter Notebook
-jupyter notebook
-
-
-Open inventory.ipynb
-Click Run All Cells
-
-Method 2: Convert to Python File
-jupyter nbconvert --to script inventory.ipynb
-python inventory.py
-
-📈 Future Improvements
-
-Add database (MySQL / SQLite)
-
-Add GUI interface
-
-Add sales report feature
-
-Deploy as web app
-
-Add authentication system
-
-🎯 What I Learned
-
-How real inventory systems work
-
-How to structure projects using OOP
-
-How to handle user input errors
-
-How to create role-based systems
-
-👨‍💻 Author
-
-Harsh Singh
+
+
+Inheritance
+Inheritance allows one class to use properties and methods of another class.
+In this system:
+User → Base class
+Admin → Inherits from User
+Staff → Inherits from User
+This helps us reuse authentication logic and maintain clean code structure. Instead of writing login logic multiple times, both Admin and Staff use the same authentication system.
+
+
+Encapsulation
+Encapsulation means protecting important data from direct access.
+In this system, inventory data is stored inside the class and accessed through methods only. This prevents accidental modification and increases data safety.
+Encapsulation makes the system more secure and organized.
+
+Role-Based Authentication System
+When the program starts, the system asks:
+Who are you?
+Admin
+Staff
+After selecting the role, the user must enter:
+• Username
+• Password
+If authentication is successful:
+• Admin gets full access
+• Staff gets limited access
+If authentication fails, access is denied.
+This ensures that only authorized users can access the system.
+
+
+
+
+Admin Functionalities
+Admin has full control over the inventory system. Admin can:
+• Add new products
+• Delete products
+• View all products
+• Update stock
+• View staff activity logs
+• View total inventory value
+• Get low stock alerts
+Admin acts as the system controller and monitors all operations.
+
+
+
+
+Staff Functionalities
+Staff has limited access. Staff can:
+• View products
+• Update stock
+Staff cannot:
+Whenever staff updates stock, the action is recorded in a log file. This ensures transparency and accountability.
+
+
+
+
+File Handling Implementation
+File handling ensures that data is not lost when the program closes.
+We use two files:
+1.inventory.json
+This file stores:
+• Product ID
+• Product Name
+• Quantity
+• Price
+The data is saved in JSON format because:
+• It supports dictionary structure
+• It is easy to read
+• It is easy to store and retrieve
+Whenever a product is added, deleted, or updated, the file is updated automatically.
+
+2. staff_log.txt
+This file stores staff activity logs.
+Each time staff updates stock, the system records:
+• Date and time
+• Product ID
+• Updated quantity
+Example:
+2026-02-11 10:30:25 - Staff updated stock of Product ID P101 to 50
+This helps the admin monitor staff actions carefully.
+
+
+
+Error Handling Strategy
+To make the system stable and professional, we use try-except blocks.
+The system handles:
+• Invalid number input
+• Duplicate Product ID
+• Negative quantity
+• Empty Product ID
+• Wrong Product ID during update
+• Invalid price input
+Instead of crashing, the system shows proper warning messages.
+This approach is called Defensive Programming.
+
+        ┌──────────────┐
+        │    START     │
+        └──────┬───────┘
+               │
+               ▼
+     ┌───────────────────┐
+     │  Select Role      │
+     │ (Admin / Staff)   │
+     └─────────┬─────────┘
+               │
+        ┌──────┴──────┐
+        │             │
+        ▼             ▼
+   ┌──────────┐   ┌──────────┐
+   │  ADMIN   │   │  STAFF   │
+   └────┬─────┘   └────┬─────┘
+        │              │
+        ▼              ▼
+  Admin Menu       Staff Menu
+        │              │
+        ▼              ▼
+ Perform Operation  update/View
+ (Add/Update/Delete
+ /view activity/
+ view inwntory)
+        │              │
+        └──────┬───────┘
+               ▼
+        ┌──────────────┐
+        │   Continue?  │
+        └──────┬───────┘
+               │Yes
+               ▼
+            (Menu)
+               │No
+               ▼
+        ┌──────────────┐
+        │     EXIT     │
+        └──────────────┘
+
+
+
+
+        Author
+        Harsh Singh
