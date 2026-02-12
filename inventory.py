@@ -125,7 +125,7 @@ class Admin(User, InventorySystem):
             }
 
             save_inventory(self.inventory)  # Save to file
-            print("✅ Product Added Successfully!")
+            print("Product Added Successfully!")
 
         except ValueError:
             print("⚠ Quantity must be integer and price must be number!")
@@ -138,7 +138,7 @@ class Admin(User, InventorySystem):
         pid = input("Enter Product ID to delete: ").strip()
 
         if pid not in self.inventory:
-            print("❌ Product ID not found!")
+            print("Product ID not found!")
             return
 
         del self.inventory[pid]  # Remove product from dictionary
@@ -173,7 +173,7 @@ Total Value: {value}
             if details["quantity"] < 5:
                 print("⚠ Low Stock Alert!")
 
-        print(f"\n💰 Total Inventory Value: {total_value}")
+        print(f"\n Total Inventory Value: {total_value}")
 
 
     def update_stock(self):
@@ -184,7 +184,7 @@ Total Value: {value}
             pid = input("Enter Product ID to update: ").strip()
 
             if pid not in self.inventory:
-                print("❌ Product ID not found!")
+                print("Product ID not found!")
                 return
 
             quantity = int(input("Enter new quantity: "))
@@ -195,10 +195,10 @@ Total Value: {value}
 
             self.inventory[pid]["quantity"] = quantity
             save_inventory(self.inventory)
-            print("✅ Stock Updated!")
+            print(" Stock Updated!")
 
         except ValueError:
-            print("⚠ Quantity must be a valid number!")
+            print(" Quantity must be a valid number!")
 
 
     def view_staff_logs(self):
@@ -248,13 +248,13 @@ class Staff(User, InventorySystem):
             pid = input("Enter Product ID to update: ").strip()
 
             if pid not in self.inventory:
-                print("❌ Product ID not found!")
+                print(" Product ID not found!")
                 return
 
             quantity = int(input("Enter new quantity: "))
 
             if quantity < 0:
-                print("⚠ Quantity cannot be negative!")
+                print("Quantity cannot be negative!")
                 return
 
             self.inventory[pid]["quantity"] = quantity
@@ -263,10 +263,10 @@ class Staff(User, InventorySystem):
             action = f"Staff updated stock of Product ID {pid} to {quantity}"
             log_staff_action(action)  # Log action
 
-            print("✅ Stock Updated!")
+            print("Stock Updated!")
 
         except ValueError:
-            print("⚠ Quantity must be a valid number!")
+            print(" Quantity must be a valid number!")
 
 
 # -------------------- MAIN FUNCTION --------------------
