@@ -159,13 +159,13 @@ The system handles:
 Instead of crashing, the system shows proper warning messages.
 This approach is called Defensive Programming.
 
-        ┌──────────────┐
+               ┌──────────────┐
         │    START     │
         └──────┬───────┘
                │
                ▼
      ┌───────────────────┐
-     │  Select Role      │
+     │   Select Role     │
      │ (Admin / Staff)   │
      └─────────┬─────────┘
                │
@@ -177,22 +177,24 @@ This approach is called Defensive Programming.
    └────┬─────┘   └────┬─────┘
         │              │
         ▼              ▼
-  Admin Menu       Staff Menu
+   Admin Menu       Staff Menu
         │              │
         ▼              ▼
- Perform Operation  update/View
- (Add/Update/Delete
- /view activity/
- view inwntory)
+ Perform Operations   View / Update
+ (Add Product         Inventory
+  Update Product      Sell Product
+  Delete Product
+  View Inventory
+  View Activity)
         │              │
         └──────┬───────┘
                ▼
         ┌──────────────┐
-        │   Continue?  │
+        │  Continue?   │
         └──────┬───────┘
                │Yes
                ▼
-            (Menu)
+            (Back to Menu)
                │No
                ▼
         ┌──────────────┐
